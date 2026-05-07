@@ -786,7 +786,9 @@
 	
 	    const ahora = new Date();
 	    const diaActual = ahora.getDay();
-	    const horaActual = ahora.getHours();
+	    // This part is key: convert current minutes into a decimal
+    	    // (e.g., 5:30 PM becomes 17.5)
+   	    const horaActual = ahora.getHours() + (ahora.getMinutes() / 60);
 	   
 	    let estaAbierto = false;
 	    const configHoy = horario[diaActual];
@@ -830,10 +832,15 @@
 	       	    const diaNombre = diasSemana[diaNum];
 	            
 	            const formatoHora = (hora) => {
-	                const suffix = hora >= 12 ? 'pm' : 'am';
-	                const h12 = hora % 12 || 12;
-	                return `${h12}${suffix}`;
-	            };
+			const hh = Math.floor(hora); // Get the whole number (e.g., 17)
+		        const mm = (hora % 1 === 0.5) ? "30" : "00"; // If there's a .5, it's 30 mins
+    
+	                const suffix = hh >= 12 ? 'pm' : 'am';
+		        let h12 = hh % 12 || 12;
+    
+		        // Only show minutes if they are not "00", or keep them for consistency
+		        return `${h12}:${mm}${suffix}`; 
+		    };
 	
 	            const li = document.createElement('li');
 	            li.style.display = "flex";
