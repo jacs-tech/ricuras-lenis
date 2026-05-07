@@ -1,0 +1,24 @@
+{
+  "name": "ricuraslenis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "excelToMenu.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacs-tech/ricuras-lenis.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jacs-tech/ricuras-lenis/issues"
+  },
+  "homepage": "https://github.com/jacs-tech/ricuras-lenis#readme",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
