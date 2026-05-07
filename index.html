@@ -140,15 +140,29 @@
 	}
 
         .product-card {
+	    /* Use the variable if defined, otherwise fall back to white */
+    	    background-color: var(--white, white); 
+    
+	    /* Add the background image */
+	    background-image: url('img/product-bg.jpg'); 
+    
+	    /* Ensure the image covers the entire card */
+	    background-size: cover; 
+    
+	    /* Center the image */
+	    background-position: center; 
+    
+	    /* Prevent the image from repeating */
+	    background-repeat: no-repeat;
             background: var(--white); margin: 10px; padding: 15px;
             border-radius: 8px; display: flex; justify-content: space-between;
             align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         .product-info { flex: 1; }
         .product-name { margin: 0; font-size: 1.1rem; transition: 0.3s; }
-        .product-name.active { font-weight: 800; color: var(--primary); }
-        .product-desc { font-size: 0.8rem; color: #666; margin: 5px 0; }
-        .product-price { font-weight: 600; color: var(--dark); }
+        .product-name.active { font-weight: 800; color: var(--white); }
+        .product-desc { font-size: 0.8rem; color: var(--white); margin: 5px 0; }
+        .product-price { font-weight: 600; color: var(--white); }
 
         .controls { display: flex; align-items: center; gap: 10px; margin-left: 15px; }
 	.btn-qty:active {
@@ -755,13 +769,13 @@
 
 	// 0=Domingo, 1=Lunes, 2=Martes, 3=Miércoles, 4=Jueves, 5=Viernes, 6=Sábado
 	const horario = {
-	    0: { abrir: 15, cerrar: 23 }, // Dom
-	    1: { abrir: 15, cerrar: 23 }, // Lun
-	    2: { abrir: 15, cerrar: 23 }, // Mar
-	    3: { abrir: 15, cerrar: 23 }, // Mie
-	    4: { abrir: 15, cerrar: 23 }, // Jue
-	    5: { abrir: 15, cerrar: 23 }, // Vie
-	    6: { abrir: 15, cerrar: 23 }  // Sab
+	    0: { abrir: 17, cerrar: 01 }, // Dom
+	    1: { abrir: 17:30, cerrar: 00:30 }, // Lun
+	    2: { abrir: 17:30, cerrar: 00:30 }, // Mar
+	    3: { abrir: 17:30, cerrar: 00:30 }, // Mie
+	    4: { abrir: 17, cerrar: 01 }, // Jue
+	    5: { abrir: 17, cerrar: 01 }, // Vie
+	    6: { abrir: 17, cerrar: 02 }  // Sab
 	};
 
 	function actualizarEstadoTienda() {
