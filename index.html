@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Interactivo | Ricuras Leni's</title>
+    <title>Menú Interactivo | Ricuras Lenis</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
     <link rel="manifest" href="manifest.json">
@@ -319,7 +319,7 @@
     <header>
         <button class="burger-menu" onclick="toggleMenu()">☰</button>
         <div class="store-name">
-  	    <a href="#" style="text-decoration: none; color: inherit;">RICURAS LENI'S</a>
+  	    <a href="#" style="text-decoration: none; color: inherit;">RICURAS LENIS</a>
 	</div>
         <button class="share-btn" onclick="shareApp()">
             <img src="img/share-icon.svg" alt="Compartir" class="share-icon-img">
@@ -692,7 +692,7 @@
 	    }
 	
 	    let total = 0;
-	    let orderText = "¡Hola Ricuras Leni's! Quisiera hacer el siguiente pedido:%0A%0A";
+	    let orderText = "¡Hola Ricuras Lenis! Quisiera hacer el siguiente pedido:%0A%0A";
 	
 	    // Bucle para extraer productos del carrito
 	    Object.values(products).forEach(p => {
@@ -722,9 +722,9 @@
 
         async function shareApp() {
 	    const shareData = {
-	        title: 'Menú Interactivo | Ricuras Leni\'s Street Food',
-	        text: 'Ricuras Leni\'s Street Food.\nServicio a domicilio.\nHaz tu pedido por WhatsApp:',
-	        url: 'https://jacs-tech.github.io/Ricuras Leni\'s Street Food/'
+	        title: 'Menú Interactivo | Ricuras Lenis',
+	        text: 'Ricuras Lenis.\nServicio a domicilio.\nHaz tu pedido por WhatsApp:',
+	        url: 'https://jacs-tech.github.io/Ricuras Lenis/'
             };
 	    try {
 		if (navigator.share) {
@@ -851,7 +851,7 @@
 	function configurarUbicacion() {
 	    // --- CONFIGURACIÓN FÁCIL ---
 	    // Pega aquí el enlace de Google Maps de tu negocio
-	    const direccionGoogle = "https://www.google.com/maps/place/Cl.+38+%23+40-12,+Union+de+Vivienda+Popular,+Cali,+Valle+del+Cauca/@3.4165544,-76.5121229,17z/data=!3m1!4b1!4m6!3m5!1s0x8e30a6dbcbc36ce9:0x5d7c34958367fca!8m2!3d3.416549!4d-76.509548!16s%2Fg%2F11l_6157x1?authuser=0&entry=ttu&g_ep=EgoyMDI2MDQyOC4wIKXMDSoASAFQAw%3D%3D";
+	    const direccionGoogle = "https://www.google.com/maps/place/Cra.+41b+%23+39-70,+Union+de+Vivienda+Popular,+Cali,+Valle+del+Cauca/@3.4139997,-76.5096927,18z/data=!4m16!1m9!3m8!1s0x8e30a6da0ac99385:0xf77341a5477ca552!2sCra.+41b+%23+39-70,+Union+de+Vivienda+Popular,+Cali,+Valle+del+Cauca!3b1!8m2!3d3.413914!4d-76.509775!10e5!16s%2Fg%2F11x05mhz_1!3m5!1s0x8e30a6da0ac99385:0xf77341a5477ca552!8m2!3d3.413914!4d-76.509775!16s%2Fg%2F11x05mhz_1?authuser=0&entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D";
 	    // ---------------------------
 	
 	    const link = document.getElementById('location-link');
