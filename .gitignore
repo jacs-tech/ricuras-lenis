@@ -1,0 +1,7 @@
+# Ignore Excel files
+*.xlsx
+*.xls
+
+# Ignore Node.js libraries (These are huge, never push them)
+node_modules/
+package-lock.json
