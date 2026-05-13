@@ -559,11 +559,7 @@
                     fullHTML += `
                         <div id="section-${section.section}">
                             <img src="img/${section.section}-banner.jpg" class="section-banner">
-                            <h2 class="section-title">
-								<span class="title-icon"><img src="img/spark-left.png" alt="spark"></span>
-								${section.title}
-								<span class="title-icon"><img src="img/spark-right.png" alt="spark"></span>
-							</h2>
+                            <h2 class="section-title">${section.title}</h2>
                     `;
 
                     section.items.forEach(item => {
