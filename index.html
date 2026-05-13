@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Interactivo | Ricuras Lenis</title>
+    <title>Cargando Menú...</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="img/icon-32.png">
     <link rel="manifest" href="manifest.json">
@@ -34,7 +34,7 @@
             display: flex; align-items: center; justify-content: space-between;
             padding: 0 20px; box-sizing: border-box;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            z-index: 1000;
+            z-index: 10000;
         }
 
         .burger-menu { font-size: 24px; cursor: pointer; background: none; border: none; }
@@ -48,6 +48,7 @@
             background: var(--white); width: 220px;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.5); z-index: 999;
             max-height: 80vh; overflow-y: auto;
+			z-index: 9999 !important;
         }
         .dropdown-content a {
             display: block; padding: 12px 20px;
@@ -178,28 +179,28 @@
 	    background-color: #4a0d14; /* Optional: darkens the red slightly on tap */
 	}
 
-        .btn-qty { 
-            width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--primary);
-            background: var(--white); color: var(--primary); font-weight: bold; cursor: pointer; font-size: 1.4rem;
-	    /* This removes the blue/grey square highlight on mobile tap */
-	    -webkit-tap-highlight-color: transparent;
-    
-	    /* This prevents the "flash" on some Android browsers */
-	    outline: none;
-        }
+	.btn-qty { 
+		width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--primary);
+		background: var(--white); color: var(--primary); font-weight: bold; cursor: pointer; font-size: 1.4rem;
+		/* This removes the blue/grey square highlight on mobile tap */
+		-webkit-tap-highlight-color: transparent;
 
-        .btn-qty:disabled { border-color: #ccc; color: #ccc; transform: none; /* Prevents the scale effect when button is disabled */ }
-        .qty-display { min-width: 20px; text-align: center; font-weight: 600; color: var(--white); }
+		/* This prevents the "flash" on some Android browsers */
+		outline: none;
+	}
 
-        .cart-float {
-            position: fixed; bottom: 15px; right: 20px;
-            background: var(--primary); color: white;
-            width: 70px; height: 70px; border-radius: 50%;
-	    background-color: white;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,1); z-index: 1001;
-            cursor: pointer; border: none; font-size: 24px;	    
-        }
+	.btn-qty:disabled { border-color: #ccc; color: #ccc; transform: none; /* Prevents the scale effect when button is disabled */ }
+	.qty-display { min-width: 20px; text-align: center; font-weight: 600; color: var(--white); }
+
+	.cart-float {
+		position: fixed; bottom: 15px; right: 20px;
+		background: var(--primary); color: white;
+		width: 70px; height: 70px; border-radius: 50%;
+		background-color: white;
+		display: flex; align-items: center; justify-content: center;
+		box-shadow: 0 4px 10px rgba(0,0,0,1); z-index: 1001;
+		cursor: pointer; border: none; font-size: 24px;	    
+	}
 
 	.cart-float:active {
 	    transform: scale(1.1);
@@ -212,7 +213,7 @@
 	    object-fit: cover; /* Ajusta el PNG circularmente */
 	}
 
-        #cart-modal {
+	#cart-modal {
 	    /* Mantén tus estilos anteriores y añade/cambia estos: */
 	    display: block; /* Siempre en bloque para que la transición funcione */
 	    position: fixed; 
@@ -220,12 +221,12 @@
 	    right: 20px;
 	    background: white; 
 	    width: 300px; 
-	    max-height: 450px;
+	    max-height: 600px;
 	    border-radius: 12px; 
 	    box-shadow: 0 5px 20px rgba(0,0,0,0.8);
 	    padding: 20px; 
 	    overflow-y: auto; 
-	    z-index: 1001;
+	    z-index: 9990;
 
 	    /* Nuevas propiedades para el efecto suave */
 	    opacity: 0;
@@ -244,7 +245,7 @@
 	    /* Estética del botón */
 	    background-color: #ffffff;
 	    color: #666;	    
-    	    /* Transición para que no aparezca de golpe */
+		/* Transición para que no aparezca de golpe */
 	    transition: background-color 0.2s ease; 
 	}
 
@@ -270,9 +271,18 @@
 	    padding: 12px;
 	    cursor: pointer; 	
 	}
+	.delivery-notice {
+		font-size: 1rem;
+		color: #555555;
+		text-align:left ;
+		margin-top: 10px;
+		font-style: italic;
+		padding: 0 10px;
+	}
 
-        .cart-item-row { margin-bottom: 12px; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px; }
-        .cart-item-sub { font-size: 0.85rem; color: #666; display: block; margin-top: 2px; }
+	.cart-item-row { margin-bottom: 12px; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px; }
+	.cart-item-sub { font-size: 0.85rem; color: #666; display: block; margin-top: 2px; }
+
 
 	.modal-overlay {
 	    position: fixed;
@@ -337,29 +347,31 @@
     </style>
 </head>
 <body>
-
     <header>
         <button class="burger-menu" onclick="toggleMenu()">☰</button>
         <div class="store-name">
-  	    <a href="#" style="text-decoration: none; color: inherit;">RICURAS LENIS</a>
-	</div>
-        <button class="share-btn" onclick="shareApp()">
-            <img src="img/share-icon.svg" alt="Compartir" class="share-icon-img">
-        </button>        
+			<a href="#" id="header-store-name" style="text-decoration: none; color: inherit; text-transform: uppercase; ">
+				Cargando...
+			</a>
+		</div>
+		<button class="share-btn" onclick="shareApp()">
+			<img src="img/share-icon.svg" alt="Compartir" class="share-icon-img">
+		</button>        
 	
-	<div id="dropdown" class="dropdown-content">
-	    <a href="#" onclick="toggleMenu()" style="font-weight: bold;">INICIO</a>
-    
-	    <div id="dynamic-nav-links"></div>
-
-	    <hr style="border: 0; border-top: 1px solid #333;">
-	    <div class="dev-section" style="padding: 10px; background-color: #67141E;">
-	        <p style="font-size: 0.9rem; color: white; margin: 0">¿Necesitas un sistema así?</p>
-	        <button onclick="contactarJacsTech()" style="background: none; border: None; cursor: pointer; font-weight: 600; font-size: 1rem; color: white; 				transition: 0.3s;">
-	            Contactar a JACS-Tech
-	        </button>
-	    </div>
-	</div>
+		<div id="dropdown" class="dropdown-content">
+			<a href="#" onclick="toggleMenu()" style="font-weight: bold;">INICIO</a>
+		
+			<div id="dynamic-nav-links"></div>			
+			<div class="dev-section" onclick="contactarJacsTech()" 
+					onmouseover="this.style.filter='brightness(1.2)'" 
+					onmouseout="this.style.filter='brightness(1.0)'" 
+					style="background-color: #67141E; color: white; text-align: left; padding: 15px; cursor: pointer;">
+				<p style="font-size: 0.9rem; margin: 0">¿Necesitas un sistema así?</p>
+				<span style="font-weight: 600; font-size: 1rem; display: block; margin-top: 5px;">
+					Contactar a JACS-Tech
+				</span>
+			</div>
+		</div>
     </header>            
 
     <div class="hero">
@@ -445,490 +457,663 @@
             Pedir
         </button>        
     </div>
+	<p class="delivery-notice">
+		* El total mostrado no incluye el costo de envío. El valor del domicilio se calculará según la distancia de entrega.
+	</p>
 </div>
-
-    <script>
-        // 1. Initialize an empty object
-	let products = {}; 
-
-	async function renderMenu() {
-	    const spinner = document.getElementById('loading-spinner');
-	    const menuContainer = document.getElementById('menu-wrapper');
-	    const navContainer = document.getElementById('dynamic-nav-links'); // Get the new nav container
-    
-	    try {
-	        const response = await fetch('menu.json');
-	        const menuData = await response.json();
-        
-	        let fullHTML = ''; 
-	        let navHTML = ''; // String to hold our navigation links
-
-	        menuData.forEach(section => {
-	            // 1. Build the Navigation Links (Burger Menu)
-	            navHTML += `<a href="#section-${section.section}" onclick="toggleMenu()">${section.title}</a>`;
-
-	            // 2. Build the Product Sections (Existing Logic)
-	            fullHTML += `
-        	        <div id="section-${section.section}">
-                	    <img src="img/${section.section}-banner.jpg" class="section-banner">
-	                    <h2 class="section-title">${section.title}</h2>
-        	    `;
-
-	            section.items.forEach(item => {
-	                const descriptionHTML = item.desc ? `<p class="product-desc">${item.desc}</p>` : '';
+<!-- SENDING MODULE -->
+<div id="delivery-modal" class="modal-overlay" style="display: none;">
+	<div class="modal-content">
+		<h3>Detalles de Entrega</h3>
 	
-	                fullHTML += `
-	                    <div class="product-card">
-	                        <div class="product-info">
-	                            <p class="product-name" id="name-${item.nickname}">${item.name}</p>
-	                            ${descriptionHTML}
-        	                    <span class="product-price">$ ${item.price.toLocaleString('es-CO')}</span>
-                	        </div>
-                        	<div class="controls">
-	                            <button class="btn-qty" onclick="updateQty('${item.nickname}', -1)" id="btn-minus-${item.nickname}" disabled>-</button>    
-	                            <span class="qty-display" id="qty-${item.nickname}">0</span>
-	                            <button class="btn-qty" onclick="updateQty('${item.nickname}', 1)">+</button>
-	                        </div>
-	                    </div>
-	                `;
+		<label>Nombre de quien recibe:</label>
+		<input type="text" id="delivery-name" placeholder="Ej. Juan Pérez">
+
+		<label>Dirección o Ubicación:</label>
+		<textarea id="delivery-address" placeholder="Escribe tu dirección detallada..."></textarea>
 	
-        	        products[item.nickname] = { 
-                	    name: item.wa_item, 
-	                    price: item.price, 
-	                    qty: 0 
-	                };
-	            });
-	            fullHTML += `</div>`;
-	        });
+		<button type="button" onclick="obtenerGeo()" class="btn-geo">
+			📍 Adjuntar mi ubicación actual
+		</button>
 
-        	// 3. Inject both the Menu and the Navigation
-	        spinner.style.display = 'none';
-	        menuContainer.innerHTML = fullHTML;
-	        navContainer.innerHTML = navHTML; // Push the burger menu links!
-	
-	    } catch (error) {
-	        console.error("Error:", error);
-	        spinner.innerHTML = "<p>Error al cargar el menú. Revisa tu conexión.</p>";
-	    }
-	}
-	
-        function toggleMenu() {
-            const dropdown = document.getElementById('dropdown');
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
+		<div class="modal-actions">
+			<button onclick="cerrarModal()" class="btn-cancel">Cancelar</button>
+			<button onclick="confirmarEnvio()" class="btn-send">Enviar Pedido</button>
+		</div>
+	</div>
+</div>
+<audio id="sound-add" src="snd/tic-add.wav" preload="auto"></audio>
+<audio id="sound-sub" src="snd/tic-sub.wav" preload="auto"></audio>
 
-	function toggleCart() {
-	    const modal = document.getElementById('cart-modal');
-	    modal.classList.toggle('show');
-	    gestionarVisibilidadReset();
-	}	
-
-        function updateQty(id, change) {
-            const p = products[id];
-            if(!p) return;
-
-		    // --- Logic for different sounds ---
-		    let sound;
-		    if (change > 0) {
-		        // Sound for adding (+)
-		        sound = document.getElementById('sound-add');
-		    } else if (change < 0) {
-		        // Sound for subtracting (-)
-		        sound = document.getElementById('sound-sub');
-		    }
-	
-		    if (sound) {
-		        sound.currentTime = 0; // Reset for rapid clicking
-		        sound.play().catch(e => console.log("Audio play blocked:", e));
-		    }
-
-            p.qty += change;
-            if (p.qty < 0) p.qty = 0;
-
-            document.getElementById(`qty-${id}`).innerText = p.qty;
-            document.getElementById(`btn-minus-${id}`).disabled = (p.qty === 0);
-            
-            const nameEl = document.getElementById(`name-${id}`);
-            if (p.qty > 0) nameEl.classList.add('active');
-            else nameEl.classList.remove('active');
-
-		    // --- Dynamic Cart Icon Logic ---
-		    const totalQty = Object.values(products).reduce((sum, item) => sum + item.qty, 0);
-		    const cartImg = document.getElementById('cart-icon-img');
-	
-		    if (totalQty > 0) {
-		        cartImg.src = "img/cart-loaded.png"; // Icon when items are present
-		    } else {
-		        cartImg.src = "img/cart-empty.png"; // Icon when cart is empty
-		    }
-	
-	        renderCart();
-		    gestionarVisibilidadReset();
-        }
-
-        function renderCart() {
-            const itemsContainer = document.getElementById('cart-items');
-            const totalContainer = document.getElementById('total-price');
-            let html = "";
-            let total = 0;
-
-            Object.values(products).forEach(p => {
-                if (p.qty > 0) {
-                    const subtotal = p.price * p.qty;
-                    total += subtotal;
-                    html += `
-                    <div class="cart-item-row">
-                        <strong>${p.name} x ${p.qty}</strong>
-                        <span class="cart-item-sub">subtotal: $ ${subtotal.toLocaleString('es-CO')}</span>
-                    </div>`;
-                }
-            });
-
-            itemsContainer.innerHTML = html || "El carrito está vacío";
-            totalContainer.innerText = `$ ${total.toLocaleString('es-CO')}`;
-        }
-
-	function resetPedido() {
-	    if (confirm("¿Deseas vaciar todo el carrito?")) {
-	        // Reset counters in your products object
-	        Object.keys(products).forEach(key => {
-	            products[key].qty = 0;
-
-	        });
-	
-		// Reset the visual counters on the product page
-	        resetVisualCounters();
-
-		const cartImg = document.getElementById('cart-icon-img');
-		cartImg.src = "img/cart-empty.png"; // Icon when cart is empty
-	
-	        // Trigger your existing function that refreshes the list and total
-		renderCart(); 
-		resetProductNamesStyle();
-		deshabilitarBotonesMenos();
-		gestionarVisibilidadReset();
-	
-		// Auto-hide modal after 3 seconds (3000 milliseconds)
-	        setTimeout(() => {
-	            const modal = document.getElementById('cart-modal');
-	            if (modal) {
-	                // Use the same function you use to close the cart normally
-	                // or toggle the 'show' class
-	                modal.classList.remove('show');
-	            }
-	        }, 1000);
-	    }
-	}	                	  
-
-	function gestionarVisibilidadReset() {
-	    const btnReset = document.getElementById('reset-cart');
-	    
-	    // Check if at least one product has a quantity greater than 0
-	    const tieneProductos = Object.values(products).some(p => p.qty > 0);
-	
-	    if (btnReset) {
-	        // Show if there are products, hide if the cart is empty
-	        btnReset.style.display = tieneProductos ? 'block' : 'none';
-	    }
-	}
-
-	function resetProductNamesStyle() {
-	    // Selects all elements where the ID starts with 'name-'
-	    const allNames = document.querySelectorAll('[id^="name-"]');
-	
-	    allNames.forEach(nameEl => {
-	        // Removes the 'active' class to return text to default style
-	        nameEl.classList.remove('active');
-	    });
-	}
-
-	function deshabilitarBotonesMenos() {
-	    // Selects all elements where the ID attribute CONTAINS 'btn-minus'
-	    const botonesMenos = document.querySelectorAll('[id*="btn-minus"]');	    
-	    let sound;
-	
-	    botonesMenos.forEach(boton => {
-	        boton.disabled = true;
-			
-		// Substracting sound
-		sound = document.getElementById('sound-sub');
-		sound.play().catch(e => console.log("Audio play blocked:", e));
-	        
-	        // Visual feedback to show they are inactive
-	        boton.style.opacity = "1";
-	        boton.style.cursor = "not-allowed";
-	    });
-	}
-
-	function resetVisualCounters() {
-	    // Select all elements that display product quantities
-	    const displays = document.querySelectorAll('.qty-display');
-	    
-	    // Loop through each element and set its text to 0
-	    displays.forEach(display => {
-	        display.innerText = "0";
-	    });
-	}
-
-	function abrirModal() {
-	    // Calculamos si hay al menos un producto con cantidad mayor a 0
-	    const tieneProductos = Object.values(products).some(p => p.qty > 0);
-	
-	    if (!tieneProductos) {
-	        alert("Agrega productos al carrito primero");
-	        return; 
-	    }		
-	    document.getElementById('cart-modal').classList.remove('show');
-	    document.getElementById('delivery-modal').style.display = 'flex';	    
-	}
-
-	function cerrarModal() {
-	    document.getElementById('delivery-modal').style.display = 'none';
-	    document.getElementById('cart-modal').classList.add('show');
-	}
-
-	let urlUbicacion = ""; // Variable global para guardar la geo si se activa
+	<script>
+        // 1. === INITIATING GLOBAL VARIABLES ===		
+		let products = {}; 
+		let numeroWhatsAppStore = ""; // It is called on when JSON uploads 
+		let horarioStore = {}
+		let urlUbicacion = ""; // Global variable to store geo in case it is activated 
 		
-	function obtenerGeo() {
-	    const btn = document.querySelector('.btn-geo');
-	    if (navigator.geolocation) {
-	        btn.innerText = "Cargando ubicación...";
-	        navigator.geolocation.getCurrentPosition((pos) => {
-	            urlUbicacion = `https://www.google.com/maps?q=${pos.coords.latitude},${pos.coords.longitude}`;
-	            btn.innerText = "✅ Ubicación adjuntada";
-	            btn.style.backgroundColor = "#e8f5e9";
-	        }, () => {
-	            alert("No se pudo obtener la ubicación. Por favor escríbela manualmente.");
-	            btn.innerText = "📍 Intentar de nuevo";
-	        });
-	    }
-	}
 
-	function confirmarEnvio() {
-	    const nombre = document.getElementById('delivery-name').value;
-	    const direccionManual = document.getElementById('delivery-address').value;
+		// 2. === START ===  
+		// FUNCTIONS THAT BUILD THE PAGE
+
+		async function initApp() {
+			// (THE ORCHESTRA DIRECTOR) 
+			try {
+				const [menuRes, configRes] = await Promise.all([
+					fetch('menu.json'),
+					fetch('config.json')
+				]);
+
+				const menuData = await menuRes.json();
+				const configData = await configRes.json();
+
+				// 1. Asignamos al objeto global para que otros botones lo usen
+       			window.appConfig = configData;
+
+				applyStoreConfig(configData);
+
+				// --- REGISTRO DE APERTURA (PAGE VIEW) ---
+        		logAnalytics("Page View", `Menu opened for ${configData.storeName}`);
+
+				renderMenu(menuData);
+				document.getElementById('loading-spinner').style.display = 'none';
+			} catch (error) {
+				console.error("Error:", error);
+			}
+		}
+		
+		function applyStoreConfig(config) {
+			// (PROCESSES CONFIGURATION) 
+			// Extracts info from json files (WhatsApp numb, location, schedule and calls actualizarEstadoTienda
+			numeroWhatsAppStore = config.whatsapp; 
+
+			// Updates location link on the HTML
+			const locationLink = document.getElementById('location-link');
+			if (locationLink) locationLink.href = config.map_url;
+
+			// Stores schedule for store state (Open/Closed)
+			horarioStore = config.horario;
+			if (typeof actualizarEstadoTienda === "function") {
+				actualizarEstadoTienda();
+			}
+		}
+
+		async function renderMenu() {
+            // (RENDERS BURGER MENU AND PRODUCTS)
+            const spinner = document.getElementById('loading-spinner');
+            const menuContainer = document.getElementById('menu-wrapper');
+            const navContainer = document.getElementById('dynamic-nav-links'); // Get the new nav container       
+
+            try {
+                const response = await fetch('menu.json');
+                const menuData = await response.json();           
+
+                let fullHTML = '';
+                let navHTML = ''; // String to hold our navigation links
+
+                menuData.forEach(section => {
+                    // 1. Build the Navigation Links (Burger Menu)
+                    navHTML += `<a href="#section-${section.section}" onclick="toggleMenu()">${section.title}</a>`;
+
+                    // 2. Build the Product Sections (Existing Logic)
+                    fullHTML += `
+                        <div id="section-${section.section}">
+                            <img src="img/${section.section}-banner.jpg" class="section-banner">
+                            <h2 class="section-title">
+								<span class="title-icon"><img src="img/spark-left.png" alt="spark"></span>
+								${section.title}
+								<span class="title-icon"><img src="img/spark-right.png" alt="spark"></span>
+							</h2>
+                    `;
+
+                    section.items.forEach(item => {
+                        const descriptionHTML = item.desc ? `<p class="product-desc">${item.desc}</p>` : '';       
+
+                        fullHTML += `
+                            <div class="product-card">
+                                <div class="product-info">
+                                    <p class="product-name" id="name-${item.nickname}">${item.name}</p>
+                                    ${descriptionHTML}
+                                    <span class="product-price">$ ${item.price.toLocaleString('es-CO')}</span>
+                                </div>
+                                <div class="controls">
+                                    <button class="btn-qty" onclick="updateQty('${item.nickname}', -1)" id="btn-minus-${item.nickname}" disabled>-</button>    
+                                    <span class="qty-display" id="qty-${item.nickname}">0</span>
+                                    <button class="btn-qty" onclick="updateQty('${item.nickname}', 1)">+</button>
+                                </div>
+                            </div>
+                        `;       
+
+                        // Inside the items loop in renderMenu()
+						products[item.nickname] = { 
+							name: item.wa_item, 
+							price: item.price, 
+							packagePrice: item.packagePrice, // Save this here!
+							qty: 0 
+						};
+                    });
+                    fullHTML += `</div>`;
+                });
+
+                // 3. Inject both the Menu and the Navigation
+                spinner.style.display = 'none';
+                menuContainer.innerHTML = fullHTML;
+                navContainer.innerHTML = navHTML; // Push the burger menu links!
+
+                // --- INSERT PROMO LOGIC HERE ---
+                try {
+                    const configResponse = await fetch('config.json');
+                    const configData = await configResponse.json();                 
+                    window.appConfig = configData;  
+
+                    if (configData.storeName) {
+                        document.title = `Menú Interactivo | ${configData.storeName}`;
+                        const storeNameElement = document.getElementById('header-store-name');
+                        if (storeNameElement) {
+                            storeNameElement.innerText = configData.storeName;
+                        }
+                    }
+
+                    // 1. Get current status and timing
+                    const today = new Date().getDay();
+                    const todayConfig = configData.horario[today];
+                    
+                    // Logic to check if store is currently OPEN based on your horario
+                    // Assuming you have a function called isStoreCurrentlyOpen
+                    const isCurrentlyOpen = isStoreCurrentlyOpen(configData); 
+
+                    const promoSection = document.getElementById('section-promo');
+                    if (promoSection) {
+                        // 2. NEW LOGIC: Trigger if it IS a promo day
+                        if (todayConfig && todayConfig.isPromo) {
+                            promoSection.style.display = 'block';
+                            localStorage.setItem('promo_active_session', 'true'); // Set the flag
+                            console.log("¡Hoy es día de promo!");
+                        } 
+                        // 3. PERSISTENCE: If it's not a promo day anymore, but the store hasn't closed yet
+                        else if (isCurrentlyOpen && localStorage.getItem('promo_active_session') === 'true') {
+                            promoSection.style.display = 'block';
+                            console.log("Promo persistente: Aún no cierran.");
+                        } 
+                        // 4. CLEANUP: If store is closed or it's a new day after closure
+                        else {
+                            promoSection.style.display = 'none';
+                            localStorage.removeItem('promo_active_session'); // Clear the flag
+                        }
+                    }
+
+                } catch (configError) {
+                    console.error("Error loading promo config:", configError);
+                }
+                // --- END PROMO LOGIC ---       
+
+            } catch (error) {
+                console.error("Error:", error);
+                spinner.innerHTML = "<p>Error al cargar el menú. Revisa tu conexión.</p>";
+            }
+        }
 	
-	    if (!nombre || (!direccionManual && !urlUbicacion)) {
-	        alert("Por favor completa el nombre y la dirección.");
-	        return;
-	    }
+		function actualizarEstadoTienda() {
+			const dot = document.getElementById('status-dot');
+			const text = document.getElementById('status-text');
+
+			// Verificación de seguridad por si el DOM no ha cargado
+			if (!horarioStore || !dot || !text) return;
+
+			const ahora = new Date();
+			const diaActual = ahora.getDay(); // 0=Dom, 1=Lun...
+			const horaActual = ahora.getHours() + (ahora.getMinutes() / 60);
+
+			// Identificar "Ayer" para la lógica de trasnocho
+			const diaAyer = diaActual === 0 ? 6 : diaActual - 1;
+			const hoy = horarioStore[diaActual];
+			const ayer = horarioStore[diaAyer];
+
+			let estaAbierto = false;
+
+			// 1. REGLA DE ORO: ¿Sigue abierto por la jornada de AYER?
+			// Si ayer abrieron y el cierre fue después de medianoche (cierre < apertura)
+			if (ayer && ayer.open !== null && ayer.close < ayer.open) {
+				if (horaActual < ayer.close) {
+					estaAbierto = true;
+				}
+			}
+
+			// 2. REGLA NORMAL: ¿Ya abrió hoy? 
+			// Solo evaluamos si la regla de ayer no nos marcó ya como abierto
+			if (!estaAbierto && hoy && hoy.open !== null) {
+				if (hoy.close < hoy.open) {
+					// Caso hoy trasnocha (ej: abre 17h, cierra 3h)
+					if (horaActual >= hoy.open) {
+						estaAbierto = true;
+					}
+				} else {
+					// Caso horario normal (mismo día)
+					if (horaActual >= hoy.open && horaActual < hoy.close) {
+						estaAbierto = true;
+					}
+				}
+			}
+
+			// 3. APLICAR TU CSS ORIGINAL
+			if (estaAbierto) {
+				dot.className = 'dot open-dot';
+				text.innerText = 'Abierto';
+				text.className = 'open-text';
+			} else {
+				dot.className = 'dot closed-dot';
+				text.innerText = 'Cerrado';
+				text.className = 'closed-text';
+			}
+		}  
+				
+
+		// 3. === SHOPPING CART LOGIC AND ORDER MANAGING  === 
+		// ALL RELATED TO THE PURCHASE (The heart of the business)
+		
+		function updateQty(id, change) {
+			// (MODIFIES QUANTITIES OF PRODUCTS)
+			const p = products[id];
+			if(!p) return;
+
+			// --- Logic for different sounds ---
+			let sound;
+			if (change > 0) {
+				// Sound for adding (+)
+				sound = document.getElementById('sound-add');
+			} else if (change < 0) {
+				// Sound for subtracting (-)
+				sound = document.getElementById('sound-sub');
+			}
 	
-	    let total = 0;
-	    let orderText = "¡Hola Ricuras Lenis! Quisiera hacer el siguiente pedido:%0A%0A";
+			if (sound) {
+				sound.currentTime = 0; // Reset for rapid clicking
+				sound.play().catch(e => console.log("Audio play blocked:", e));
+			}
+
+			p.qty += change;
+			if (p.qty < 0) p.qty = 0;
+
+			document.getElementById(`qty-${id}`).innerText = p.qty;
+			document.getElementById(`btn-minus-${id}`).disabled = (p.qty === 0);
+			
+			const nameEl = document.getElementById(`name-${id}`);
+			if (p.qty > 0) nameEl.classList.add('active');
+			else nameEl.classList.remove('active');
+
+			// --- Dynamic Cart Icon Logic ---
+			const totalQty = Object.values(products).reduce((sum, item) => sum + item.qty, 0);
+			const cartImg = document.getElementById('cart-icon-img');
 	
-	    // Bucle para extraer productos del carrito
-	    Object.values(products).forEach(p => {
-	        if (p.qty > 0) {
-	            const subtotal = p.price * p.qty;
-	            total += subtotal;
-	            orderText += `- ${p.name} x ${p.qty}%0A  subtotal: $ ${subtotal.toLocaleString()}%0A`;
-	        }
-	    });
+			if (totalQty > 0) {
+				cartImg.src = "img/cart-loaded.png"; // Icon when items are present
+			} else {
+				cartImg.src = "img/cart-empty.png"; // Icon when cart is empty
+			}
 	
-	    orderText += `%0A*Total: $ ${total.toLocaleString()}*%0A`;
+			renderCart();
+			gestionarVisibilidadReset();
+		}		
+		
+		function renderCart() {
+			const itemsContainer = document.getElementById('cart-items');
+			const totalContainer = document.getElementById('total-price');
+			let html = "";
+			let total = 0;
+			let totalPackageCharge = 0;
+
+			// Check if the store wants to charge for packaging
+			const shouldChargePackage = window.appConfig && window.appConfig.chargePackage;
+
+			Object.values(products).forEach(p => {
+				if (p.qty > 0) {
+					const subtotal = p.price * p.qty;
+					total += subtotal;
+
+					// Calculate package charge if enabled
+					if (shouldChargePackage && p.packagePrice > 0) {
+						totalPackageCharge += (p.packagePrice * p.qty);
+					}
+
+					html += `
+					<div class="cart-item-row">
+						<strong>${p.name} x ${p.qty}</strong>
+						<span class="cart-item-sub">subtotal: $ ${subtotal.toLocaleString('es-CO')}</span>
+					</div>`;
+				}
+			});
+
+			// Add the Package line if there is a charge
+			if (totalPackageCharge > 0) {
+				total += totalPackageCharge;
+				html += `
+				<div class="cart-item-row" style="border-top: 1px dashed #ccc; margin-top: 10px; color: #666;">
+					<strong>Caja icopor subtotal</strong>
+					<span class="cart-item-sub">$ ${totalPackageCharge.toLocaleString('es-CO')}</span>
+				</div>`;
+			}
+
+			itemsContainer.innerHTML = html || "El carrito está vacío";
+			totalContainer.innerText = `$ ${total.toLocaleString('es-CO')}`;
+		}
+		
+		function confirmarEnvio() {
+			// (PREPARES WHATSAPP MSG WITH THE ORDER)
+			const nombre = document.getElementById('delivery-name').value;
+			const direccionManual = document.getElementById('delivery-address').value;
+		
+			if (!nombre || (!direccionManual && !urlUbicacion)) {
+				alert("Por favor completa el nombre y la dirección.");
+				return;
+			}
+		
+			let total = 0;
+			let store = window.appConfig.storeName || "la tienda";
+			let orderText = encodeURIComponent(`¡Hola ${store}! Quisiera hacer el siguiente pedido:\n\n`);
+		
+			// Bucle para extraer productos del carrito
+			Object.values(products).forEach(p => {
+				if (p.qty > 0) {
+					const subtotal = p.price * p.qty;
+					total += subtotal;
+					orderText += `- ${p.name} x ${p.qty}%0A  subtotal: $ ${subtotal.toLocaleString()}%0A`;
+				}
+			});
+		
+			orderText += `%0A*Total: $ ${total.toLocaleString()}*%0A`;
+		
+			// Info de entrega
+			let infoEntrega = `%0A👤 *Recibe:* ${nombre}%0A📍 *Dirección:* ${direccionManual}`;
+			if (urlUbicacion) infoEntrega += `%0A🗺️ *Mapa:* ${urlUbicacion}`;
+		
+			const mensajeFinal = orderText + infoEntrega;
+			
+			document.getElementById('delivery-modal').style.display = 'none';
+			document.getElementById('cart-modal').classList.remove('show');
+		
+			// Abrir WhatsApp con el mensaje formateado
+			// Usamos template literals (las comillas invertidas ``) para meter la variable
+			window.open(`https://wa.me/${numeroWhatsAppStore}?text=${mensajeFinal}`);
+		
+			cerrarModal();
+			logAnalytics("WhatsApp Order", "User clicked send order button");			
+		}
+		
+		function obtenerGeo() {
+			// (OBTAINS GPS)
+			// Allows the client to share to the restaurant their exact location by GPS
+			const btn = document.querySelector('.btn-geo');
+			if (navigator.geolocation) {
+				btn.innerText = "Cargando ubicación...";
+				navigator.geolocation.getCurrentPosition((pos) => {
+					urlUbicacion = `https://www.google.com/maps?q=${pos.coords.latitude},${pos.coords.longitude}`;
+					btn.innerText = "✅ Ubicación adjuntada";
+					btn.style.backgroundColor = "#e8f5e9";
+				}, () => {
+					alert("No se pudo obtener la ubicación. Por favor escríbela manualmente.");
+					btn.innerText = "📍 Intentar de nuevo";
+				});
+			}
+		}
+
+
+		// 4. === INTERFAZ AND MODALES (UI/UX) === 
+		// FUNCTIONS THAT OPENS, CLOSES, AND SHOW STUFF. THEY ARE VISUAL
+
+		function toggleMenu() {
+			const dropdown = document.getElementById('dropdown');
+			dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+		}
+
+		function toggleCart() {
+			const modal = document.getElementById('cart-modal');
+			modal.classList.toggle('show');
+			gestionarVisibilidadReset();
+		}			
+
+		function toggleSchedule() {
+			const box = document.getElementById('schedule-box');
+			const list = document.getElementById('schedule-list');
+			
+			if (!box || !list) return;
+
+			if (list.children.length === 0) {
+				const diasNombres = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+				const ordenDias = [1, 2, 3, 4, 5, 6, 0]; 
+				
+				ordenDias.forEach(diaNum => {
+					const h = horarioStore[diaNum]; 
+					const diaNombre = diasNombres[diaNum];
+					
+					if (!h) return;
+
+					const formatoHora = (hora) => {
+						// Si la hora es null, devolvemos un texto especial
+						if (hora === null || hora === undefined) return null;
+						
+						const hh = Math.floor(hora);
+						const mm = (hora % 1 === 0.5) ? "30" : "00";
+						const suffix = hh >= 12 ? 'pm' : 'am';
+						let h12 = hh % 12 || 12;
+						return `${h12}:${mm}${suffix}`; 
+					};
+
+					const abrirTxt = formatoHora(h.open);  // CAMBIADO: h.open
+					const cerrarTxt = formatoHora(h.close); // CAMBIADO: h.close
+
+					const li = document.createElement('li');
+					li.style.display = "flex";
+					li.style.justifyContent = "space-between";
+					li.style.gap = "15px";
+					li.style.padding = "5px 0";
+					li.style.borderBottom = "1px solid #eee";
+					
+					// LÓGICA PARA MOSTRAR "CERRADO" O LAS HORAS
+					let horarioVisible;
+					if (abrirTxt === null) {
+						horarioVisible = `<span style="color: #e74c3c;">Cerrado</span>`;
+					} else {
+						horarioVisible = `<span>${abrirTxt} a ${cerrarTxt}</span>`;
+					}
+
+					li.innerHTML = `
+						<span style="font-weight: bold;">${diaNombre}:</span> 
+						${horarioVisible}
+					`;
+					list.appendChild(li);
+				});
+			}
+			box.classList.toggle('show');
+		}
+				
+		function abrirModal() {
+			// Calculamos si hay al menos un producto con cantidad mayor a 0
+			const tieneProductos = Object.values(products).some(p => p.qty > 0);
+		
+			if (!tieneProductos) {
+				alert("Agrega productos al carrito primero");
+				return; 
+			}		
+			document.getElementById('cart-modal').classList.remove('show');
+			document.getElementById('delivery-modal').style.display = 'flex';	    
+		}
+		
+		function cerrarModal() {
+			document.getElementById('delivery-modal').style.display = 'none';
+			document.getElementById('cart-modal').classList.add('show');
+		}	
+				
+		window.onclick = function(event) {
+			// (CLOSES MODULES WHEN CLICKING OUT OF IT)
+			if (!event.target.matches('#status-text')) {
+				const box = document.getElementById('schedule-box');
+				if (box.classList.contains('show')) {
+					box.classList.remove('show');
+				}
+			}
+		}
+		
+
+		// 5. === CLEANING AND RESET === 
+		// FUNCTIONS THAT CLEAN UP THE APP BRAND NEW. USEFUL TO DEBUG RESIDUAL DATA ERRORS 
+		
+		function resetPedido() {
+			if (confirm("¿Deseas vaciar todo el carrito?")) {
+				// Reset counters in your products object
+				Object.keys(products).forEach(key => {
+					products[key].qty = 0;
+
+				});
+		
+			// Reset the visual counters on the product page
+				resetVisualCounters();
+
+			const cartImg = document.getElementById('cart-icon-img');
+			cartImg.src = "img/cart-empty.png"; // Icon when cart is empty
+		
+				// Trigger your existing function that refreshes the list and total
+			renderCart(); 
+			resetProductNamesStyle();
+			deshabilitarBotonesMenos();
+			gestionarVisibilidadReset();
+		
+			// Auto-hide modal after 3 seconds (3000 milliseconds)
+				setTimeout(() => {
+					const modal = document.getElementById('cart-modal');
+					if (modal) {
+						// Use the same function you use to close the cart normally
+						// or toggle the 'show' class
+						modal.classList.remove('show');
+					}
+				}, 1000);
+			}
+		}	                	  
+		
+		function gestionarVisibilidadReset() {
+			const btnReset = document.getElementById('reset-cart');
+			
+			// Check if at least one product has a quantity greater than 0
+			const tieneProductos = Object.values(products).some(p => p.qty > 0);
+			
+			if (btnReset) {
+				// Show if there are products, hide if the cart is empty
+				btnReset.style.display = tieneProductos ? 'block' : 'none';
+			}
+		}		
 	
-	    // Info de entrega
-	    let infoEntrega = `%0A👤 *Recibe:* ${nombre}%0A📍 *Dirección:* ${direccionManual}`;
-	    if (urlUbicacion) infoEntrega += `%0A🗺️ *Mapa:* ${urlUbicacion}`;
-	
-	    const mensajeFinal = orderText + infoEntrega;
-	    
-	    document.getElementById('delivery-modal').style.display = 'none';
-	    document.getElementById('cart-modal').classList.remove('show');
-	
-	    // Abrir WhatsApp con el mensaje formateado
-	    window.open(`https://wa.me/573226034345?text=${mensajeFinal}`);
-	   
-	    cerrarModal();
-	}
+		function resetProductNamesStyle() {
+			// Selects all elements where the ID starts with 'name-'
+			// To remove the highlighting from the products when quantity equals 0 
+			const allNames = document.querySelectorAll('[id^="name-"]');
+			
+			allNames.forEach(nameEl => {
+				// Removes the 'active' class to return text to default style
+				nameEl.classList.remove('active');
+			});
+		}
+		
+		function deshabilitarBotonesMenos() {
+			// Selects all elements where the ID attribute CONTAINS 'btn-minus'
+			const botonesMenos = document.querySelectorAll('[id*="btn-minus"]');	    
+			let sound;
+		
+			botonesMenos.forEach(boton => {
+				boton.disabled = true;
+				
+			// Substracting sound
+			sound = document.getElementById('sound-sub');
+			sound.play().catch(e => console.log("Audio play blocked:", e));
+				
+				// Visual feedback to show they are inactive
+				boton.style.opacity = "1";
+				boton.style.cursor = "not-allowed";
+			});
+		}
+
+		function resetVisualCounters() {
+			// Select all elements that display product quantities greater than 0 and take them back to 0
+			const displays = document.querySelectorAll('.qty-display');
+			
+			// Loop through each element and set its text to 0
+			displays.forEach(display => {
+				display.innerText = "0";
+			});
+		}
+
+
+		// 6. === UTILITIES AND EXTRAS ===
+		// ACTIONS THAT DO NOT AFFECT SHOPPING FLOW
 
         async function shareApp() {
-	    const shareData = {
-	        title: 'Menú Interactivo | Ricuras Lenis',
-	        text: 'Ricuras Lenis.\nServicio a domicilio.\nHaz tu pedido por WhatsApp:',
-	        url: 'https://jacs-tech.github.io/Ricuras Lenis/'
-            };
-	    try {
-		if (navigator.share) {
-			await navigator.share(shareData);
-		} else {
-			await navigator.clipboard.writeText(window.location.href);
-			alert("Enlace copiado al portapapeles");
+			// 1. Declare the variables locally by pulling them from your global config
+			const store = window.appConfig && window.appConfig.storeName ? window.appConfig.storeName : "Menú Interactivo";
+			const repo = window.appConfig && window.appConfig.repoName ? window.appConfig.repoName : "";
+			
+			const shareData = {
+				// Título dinámico para la pestaña de compartir
+				title: `Menú Interactivo | ${store}`,
+				// Texto dinámico con el nombre de la tienda
+				text: `${store}.\nServicio a domicilio.\nHaz tu pedido por WhatsApp:`,
+				// URL dinámica usando el nombre del repositorio de la celda B19
+				url: `https://jacs-tech.github.io/${repo}/`
+			};
+
+			try {
+				logAnalytics("Share App", "User opened share menu");
+				if (navigator.share) {
+					await navigator.share(shareData);
+				} else {
+					// If the repo variable is empty, fall back to the current browser URL
+					const fallbackUrl = repo ? `https://jacs-tech.github.io/${repo}/` : window.location.href;
+					await navigator.clipboard.writeText(fallbackUrl);
+					alert("Enlace copiado al portapapeles");
+				}
+			} catch (err) { 
+			console.log("Error al compartir: ", err); 
+			}
 		}
-	    } catch (err) { 
-		console.log("Error al compartir: ", err); 
-	    }
-	}
+		
+		function contactarJacsTech() {
+			const numero = "573161512216"; 
+			const store = window.appConfig.storeName || "un comercio";			
+			const mensaje = encodeURIComponent(`Hola JACS-Tech, vi el sistema de menú en ${store} y me interesa uno para mi negocio.`);
+			
+			const url = `https://wa.me/${numero}?text=${mensaje}`;
+			window.open(url, '_blank');
+		}
 
-	function gestionarVisibilidadReset() {
-	    const btnReset = document.getElementById('reset-cart');
-	    
-	    // Check if at least one product has a quantity greater than 0
-	    const tieneProductos = Object.values(products).some(p => p.qty > 0);
-	
-	    if (btnReset) {
-	        // Show if there are products, hide if the cart is empty
-	        btnReset.style.display = tieneProductos ? 'block' : 'none';
-	    }
-	}
+		async function logAnalytics(action, details = "") {
+			const scriptURL = "https://script.google.com/macros/s/AKfycbxfZIy3suWjAHEp0Mcv6PoINEhpDpgzaz4W-xh14k2KZD4CBYr77Ydsfx1-ox-t2iKg/exec";
+			
+			// --- LÓGICA DE IDENTIFICACIÓN CENTRALIZADA ---
+			const isDev = localStorage.getItem('jacs_dev') === 'true';
+			const userLabel = isDev ? "[ADMIN]" : "[USER]";
+			
+			// Combinamos la etiqueta con los detalles para que en el Sheet 
+			// veas algo como: "[ADMIN] Page View" o "[USER] Shared App"
+			const finalAction = `${userLabel} ${action}`;
 
-	// --- CONFIGURACIÓN DE HORARIO ---
-	const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+			const payload = {
+				store: window.appConfig.storeName || "Unknown Store",
+				action: finalAction,
+				details: details
+			};
 
-	// 0=Domingo, 1=Lunes, 2=Martes, 3=Miércoles, 4=Jueves, 5=Viernes, 6=Sábado
-	const horario = {
-	    0: { abrir: 17, cerrar: 1 }, // Dom
-	    1: { abrir: 17.5, cerrar: 0.5 }, // Lun
-	    2: { abrir: 17.5, cerrar: 0.5 }, // Mar
-	    3: { abrir: 17.5, cerrar: 0.5 }, // Mie
-	    4: { abrir: 17, cerrar: 1 }, // Jue
-	    5: { abrir: 17, cerrar: 1 }, // Vie
-	    6: { abrir: 17, cerrar: 2 }  // Sab
-	};
+			try {
+				// We use 'keepalive' to ensure the request finishes even if the page redirects (like to WhatsApp)
+				await fetch(scriptURL, {
+					method: 'POST',
+					mode: 'no-cors', 
+					body: JSON.stringify(payload),
+					keepalive: true
+				});
+			} catch (err) {
+				console.error("Analytics Error:", err);
+			}
+		}
 
-	function actualizarEstadoTienda() {
-	    const dot = document.getElementById('status-dot');
-	    const text = document.getElementById('status-text');
-	
-	    const ahora = new Date();
-	    const diaActual = ahora.getDay();
-	    // This part is key: convert current minutes into a decimal
-    	    // (e.g., 5:30 PM becomes 17.5)
-   	    const horaActual = ahora.getHours() + (ahora.getMinutes() / 60);
-	   
-	    let estaAbierto = false;
-	    const configHoy = horario[diaActual];
-	
-	    if (configHoy) {
-	        if (configHoy.cerrar < configHoy.abrir) { 
-	            // Lógica para negocios que cierran después de medianoche (ej. 2 AM)
-	            if (horaActual >= configHoy.abrir || horaActual < configHoy.cerrar) {
-	                estaAbierto = true;
-	       	    }
-	        } else {
-	            // Lógica para horario normal
-	            if (horaActual >= configHoy.abrir && horaActual < configHoy.cerrar) {
-	                estaAbierto = true;
-	            }
-	        }
-	    }
-	
-	    if (estaAbierto) {
-	        dot.className = 'dot open-dot';
-	        text.innerText = 'Abierto';
-	        text.className = 'open-text';
-	    } else {
-	        dot.className = 'dot closed-dot';
-	        text.innerText = 'Cerrado';
-	        text.className = 'closed-text';
-	    }
-	}  
-
-	function toggleSchedule() {
-	    const box = document.getElementById('schedule-box');
-	    const list = document.getElementById('schedule-list');
-	   
-	    if (!box || !list) return;
-	
-	    if (list.children.length === 0) {
-	        const ordenDias = [1, 2, 3, 4, 5, 6, 0];
-	        
-	        ordenDias.forEach(diaNum => {
-	            const h = horario[diaNum];
-	       	    const diaNombre = diasSemana[diaNum];
-	            
-	            const formatoHora = (hora) => {
-			const hh = Math.floor(hora); // Get the whole number (e.g., 17)
-		        const mm = (hora % 1 === 0.5) ? "30" : "00"; // If there's a .5, it's 30 mins
-    
-	                const suffix = hh >= 12 ? 'pm' : 'am';
-		        let h12 = hh % 12 || 12;
-    
-		        // Only show minutes if they are not "00", or keep them for consistency
-		        return `${h12}:${mm}${suffix}`; 
-		    };
-	
-	            const li = document.createElement('li');
-	            li.style.display = "flex";
-	            li.style.justifyContent = "space-between";
-	            li.style.gap = "15px";
-	            li.style.padding = "5px 0";
-	            li.style.borderBottom = "1px solid #eee";
-	            
-	            li.innerHTML = `
-	                <span style="font-weight: bold;">${diaNombre}:</span> 
-	                <span>${formatoHora(h.abrir)} a ${formatoHora(h.cerrar)}</span>
-	            `;
-	            list.appendChild(li);
-	        });
-	    }
-	
-	    // Toggle the class
-	    box.classList.toggle('show');
-	}
-
-	// Cerrar el cuadro si se hace clic fuera de él
-	window.onclick = function(event) {
-	    if (!event.target.matches('#status-text')) {
-	        const box = document.getElementById('schedule-box');
-	        if (box.classList.contains('show')) {
-	            box.classList.remove('show');
-	        }
-	    }
-	}
-
-	function configurarUbicacion() {
-	    // --- CONFIGURACIÓN FÁCIL ---
-	    // Pega aquí el enlace de Google Maps de tu negocio
-	    const direccionGoogle = "https://www.google.com/maps/place/Cra.+41b+%23+39-70,+Union+de+Vivienda+Popular,+Cali,+Valle+del+Cauca/@3.4139997,-76.5096927,18z/data=!4m16!1m9!3m8!1s0x8e30a6da0ac99385:0xf77341a5477ca552!2sCra.+41b+%23+39-70,+Union+de+Vivienda+Popular,+Cali,+Valle+del+Cauca!3b1!8m2!3d3.413914!4d-76.509775!10e5!16s%2Fg%2F11x05mhz_1!3m5!1s0x8e30a6da0ac99385:0xf77341a5477ca552!8m2!3d3.413914!4d-76.509775!16s%2Fg%2F11x05mhz_1?authuser=0&entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D";
-	    // ---------------------------
-	
-	    const link = document.getElementById('location-link');
-	    if (link) {
-	        link.href = direccionGoogle;
-	    }
-	}
-
-	function contactarJacsTech() {
-	    const numero = "573161512216"; // Reemplaza con tu número de Cali
-	    const mensaje = encodeURIComponent("Hola JACS-Tech, vi el sistema  de pedidos y me gustaría solicitar una cotización para un proyecto similar.");
-	    const url = `https://wa.me/${numero}?text=${mensaje}`;
-    
-	    window.open(url, '_blank');
-	}
-
-	// Execute all Logics to upload page
-	window.addEventListener('DOMContentLoaded', () => {
-	    actualizarEstadoTienda();
-	    configurarUbicacion();
-	});
-
-	renderMenu();
+		// 7. === THE FINAL TRIGGER === 
+		initApp();
     </script>
-
-    <!-- Modal de Envío -->
-    <div id="delivery-modal" class="modal-overlay" style="display: none;">
-        <div class="modal-content">
-            <h3>Detalles de Entrega</h3>
-        
-            <label>Nombre de quien recibe:</label>
-            <input type="text" id="delivery-name" placeholder="Ej. Juan Pérez">
-
-            <label>Dirección o Ubicación:</label>
-            <textarea id="delivery-address" placeholder="Escribe tu dirección detallada..."></textarea>
-        
-            <button type="button" onclick="obtenerGeo()" class="btn-geo">
-                📍 Adjuntar mi ubicación actual
-            </button>
-
-            <div class="modal-actions">
-                <button onclick="cerrarModal()" class="btn-cancel">Cancelar</button>
-                <button onclick="confirmarEnvio()" class="btn-send">Enviar Pedido</button>
-            </div>
-        </div>
-    </div>
-
-    <audio id="sound-add" src="snd/tic-add.wav" preload="auto"></audio>
-    <audio id="sound-sub" src="snd/tic-sub.wav" preload="auto"></audio>
 </body>
 </html>
