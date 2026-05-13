@@ -1,0 +1,44 @@
+{
+  "whatsapp": 573054479114,
+  "map_url": "https://maps.app.goo.gl/v1AJ21R8x4ezatun6",
+  "chargePackage": false,
+  "storeName": "Ricuaras Lenis",
+  "repoName": "ricuras-lenis",
+  "horario": [
+    {
+      "open": 17,
+      "close": 1,
+      "isPromo": false
+    },
+    {
+      "open": 17.5,
+      "close": 0.5,
+      "isPromo": false
+    },
+    {
+      "open": 17.5,
+      "close": 0.5,
+      "isPromo": false
+    },
+    {
+      "open": 17.5,
+      "close": 0.5,
+      "isPromo": false
+    },
+    {
+      "open": 17,
+      "close": 1,
+      "isPromo": false
+    },
+    {
+      "open": 17,
+      "close": 1,
+      "isPromo": false
+    },
+    {
+      "open": 17,
+      "close": 2,
+      "isPromo": false
+    }
+  ]
+}

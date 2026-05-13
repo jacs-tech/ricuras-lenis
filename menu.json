@@ -7,13 +7,15 @@
         "nickname": "pr1",
         "name": "Sencillo",
         "price": 7000,
-        "wa_item": "Perro Sencillo"
+        "wa_item": "Perro Sencillo",
+        "packagePrice": 0
       },
       {
         "nickname": "pr2",
         "name": "Especial",
         "price": 10000,
-        "wa_item": "Perro Especial"
+        "wa_item": "Perro Especial",
+        "packagePrice": 0
       }
     ]
   },
@@ -25,7 +27,8 @@
         "nickname": "ch1",
         "name": "De Pollo",
         "price": 7000,
-        "wa_item": "Chorizo de pollo"
+        "wa_item": "Chorizo de pollo",
+        "packagePrice": 0
       }
     ]
   },
@@ -37,13 +40,15 @@
         "nickname": "bq1",
         "name": "Alitas BBQ",
         "price": 22000,
-        "wa_item": "Alitas BBQ"
+        "wa_item": "Alitas BBQ",
+        "packagePrice": 0
       },
       {
         "nickname": "bq2",
         "name": "Costilla BBQ",
         "price": 11000,
-        "wa_item": "Costilla BBQ"
+        "wa_item": "Costilla BBQ",
+        "packagePrice": 0
       }
     ]
   },
@@ -55,13 +60,15 @@
         "nickname": "fi1",
         "name": "De Pollo",
         "price": 18000,
-        "wa_item": "Filetes de Pollo"
+        "wa_item": "Filetes de Pollo",
+        "packagePrice": 0
       },
       {
         "nickname": "fi2",
         "name": "De Cerdo",
         "price": 18000,
-        "wa_item": "Filetes de Cerdo"
+        "wa_item": "Filetes de Cerdo",
+        "packagePrice": 0
       }
     ]
   },
@@ -73,7 +80,8 @@
         "nickname": "ct1",
         "name": "Costilla ahumada",
         "price": 11000,
-        "wa_item": "Costilla ahumada"
+        "wa_item": "Costilla ahumada",
+        "packagePrice": 0
       }
     ]
   },
@@ -85,19 +93,22 @@
         "nickname": "pe1",
         "name": "Pequeño",
         "price": 8000,
-        "wa_item": "Pernil Pequeño"
+        "wa_item": "Pernil Pequeño",
+        "packagePrice": 0
       },
       {
         "nickname": "pe2",
         "name": "Mediano",
         "price": 9000,
-        "wa_item": "Pernil Mediano"
+        "wa_item": "Pernil Mediano",
+        "packagePrice": 0
       },
       {
         "nickname": "pe3",
         "name": "Grande",
         "price": 10000,
-        "wa_item": "Pernil Grande"
+        "wa_item": "Pernil Grande",
+        "packagePrice": 0
       }
     ]
   },
@@ -109,31 +120,36 @@
         "nickname": "hm1",
         "name": "Sencilla",
         "price": 10000,
-        "wa_item": "Hamburguesa Sencilla"
+        "wa_item": "Hamburguesa Sencilla",
+        "packagePrice": 0
       },
       {
         "nickname": "hm2",
         "name": "Especial doble queso",
         "price": 12500,
-        "wa_item": "Hamburguesa Especial doble queso"
+        "wa_item": "Hamburguesa Especial doble queso",
+        "packagePrice": 0
       },
       {
         "nickname": "hm3",
         "name": "Especial de pollo",
         "price": 13000,
-        "wa_item": "Hamburguesa Especial de pollo"
+        "wa_item": "Hamburguesa Especial de pollo",
+        "packagePrice": 0
       },
       {
         "nickname": "hm4",
         "name": "Doble carne",
         "price": 16000,
-        "wa_item": "Hamburguesa Doble carne"
+        "wa_item": "Hamburguesa Doble carne",
+        "packagePrice": 0
       },
       {
         "nickname": "hm5",
         "name": "Mixta",
         "price": 16500,
-        "wa_item": "Hamburguesa Mixta"
+        "wa_item": "Hamburguesa Mixta",
+        "packagePrice": 0
       }
     ]
   },
@@ -145,13 +161,15 @@
         "nickname": "sn1",
         "name": "Sencillo",
         "price": 7000,
-        "wa_item": "Sandwich Sencillo"
+        "wa_item": "Sandwich Sencillo",
+        "packagePrice": 0
       },
       {
         "nickname": "sn2",
         "name": "Especial",
         "price": 9000,
-        "wa_item": "Sandwich Especial"
+        "wa_item": "Sandwich Especial",
+        "packagePrice": 0
       }
     ]
   },
@@ -163,31 +181,36 @@
         "nickname": "gs1",
         "name": "COCA COLA 400 ML ",
         "price": 4000,
-        "wa_item": "Gaseosa Coca Cola 400 ML"
+        "wa_item": "Gaseosa Coca Cola 400 ML",
+        "packagePrice": 0
       },
       {
         "nickname": "gs2",
         "name": "COCACOLA LITRO ",
         "price": 8000,
-        "wa_item": "Gaseosa Coca Cola Litro"
+        "wa_item": "Gaseosa Coca Cola Litro",
+        "packagePrice": 0
       },
       {
         "nickname": "gs3",
         "name": "CUATRO 400 ML ",
         "price": 4000,
-        "wa_item": "Gaseosa Cuatro 400 ML"
+        "wa_item": "Gaseosa Cuatro 400 ML",
+        "packagePrice": 0
       },
       {
         "nickname": "gs4",
         "name": "COLOMBIANA 400 ML ",
         "price": 4000,
-        "wa_item": "Gaseosa Colombiana 400 ML"
+        "wa_item": "Gaseosa Colombiana 400 ML",
+        "packagePrice": 0
       },
       {
         "nickname": "gs5",
         "name": "MANZANA 400 ML ",
         "price": 4000,
-        "wa_item": "Gaseosa Manzana 400 ML"
+        "wa_item": "Gaseosa Manzana 400 ML",
+        "packagePrice": 0
       }
     ]
   },
@@ -199,37 +222,43 @@
         "nickname": "jg1",
         "name": "Limonada Natural",
         "price": 7000,
-        "wa_item": "Limonada Natural"
+        "wa_item": "Limonada Natural",
+        "packagePrice": 0
       },
       {
         "nickname": "jg2",
         "name": "Limonada Cereza",
         "price": 10000,
-        "wa_item": "Limonada Cereza"
+        "wa_item": "Limonada Cereza",
+        "packagePrice": 0
       },
       {
         "nickname": "jg3",
         "name": "Limonada de Coco",
         "price": 10000,
-        "wa_item": "Limonada de Coco"
+        "wa_item": "Limonada de Coco",
+        "packagePrice": 0
       },
       {
         "nickname": "jg4",
         "name": "Jarra de Limonada",
         "price": 14000,
-        "wa_item": "Jarra de Limonada"
+        "wa_item": "Jarra de Limonada",
+        "packagePrice": 0
       },
       {
         "nickname": "jg5",
         "name": "Jugos en Agua",
         "price": 8000,
-        "wa_item": "Jugo en Agua"
+        "wa_item": "Jugo en Agua",
+        "packagePrice": 0
       },
       {
         "nickname": "jg6",
         "name": "Jugos en Leche",
         "price": 10000,
-        "wa_item": "Jugo en Leche"
+        "wa_item": "Jugo en Leche",
+        "packagePrice": 0
       }
     ]
   }
